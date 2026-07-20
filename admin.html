@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administrare calendar</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="admin"><header><div><h1>Administrare aniversări</h1><p>Editează lista, apoi descarcă fișierele actualizate.</p></div>
+<button id="add" class="button primary small">Adaugă persoană</button></header>
+<div class="toolbar"><input id="search" placeholder="Caută după nume"><button id="json" class="button secondary small">Descarcă data.json</button>
+<button id="ics" class="button primary small">Descarcă aniversari.ics</button></div><div id="list"></div></main>
+<dialog id="dlg"><form id="form"><h2 id="title">Adaugă persoană</h2><input type="hidden" id="id">
+<label>Nume complet<input id="name" required></label><label>Data nașterii<input id="birth" type="date" required></label>
+<div class="actions"><button type="button" id="cancel" class="button secondary small">Renunță</button>
+<button class="button primary small">Salvează</button></div></form></dialog><script src="admin.js"></script></body></html>

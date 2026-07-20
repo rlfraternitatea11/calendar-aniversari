@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calendar RL Fraternitatea</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="card"><div class="logo">📅</div><h1>Calendar RL Fraternitatea</h1>
+<p>Abonează-te la aniversările membrilor. Calendarul se actualizează când administratorul publică modificări.</p>
+<a id="iphone" class="button primary" href="#">Abonare pe iPhone</a>
+<a class="button secondary" href="aniversari.ics">Deschide calendarul</a>
+<section class="help"><h2>Android</h2><p>Copiază URL-ul și adaugă-l în Google Calendar: Alte calendare → Din URL.</p>
+<div class="copy"><input id="url" readonly><button id="copy">Copiază</button></div></section></main>
+<script>
+const u=new URL("aniversari.ics",location.href).href;
+document.getElementById("url").value=u;
+document.getElementById("iphone").href=u.replace(/^https?:/,"webcal:");
+document.getElementById("copy").onclick=async()=>{await navigator.clipboard.writeText(u);document.getElementById("copy").textContent="Copiat";};
+</script></body></html>
